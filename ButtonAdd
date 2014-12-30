@@ -1,0 +1,38 @@
+package DevSoft;
+
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.*;
+
+public class ButtonAdd {
+
+
+    public void Bad(final String s) throws IOException {
+        System.out.println("Введите Имя Фамилию Возраст Город через пробел,в конце операции напишите end");
+        ArrayList<String> list = new ArrayList<String>();
+        Scanner ac = new Scanner(System.in);
+        while (true) {
+            String a = ac.next();
+            list.add(a);
+            try {
+                BufferedWriter in = new BufferedWriter(new FileWriter("SoftDev.txt"));
+                String s;
+                while((s=in.readLine())!=null){
+
+                    System.out.println(s);
+                }
+                in.close();
+                in.flush();
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
+            if (a.equals("end")) {
+                break;
+            } else list.add(a);
+            System.out.println("Вы ввели " + a);
+        }
+    }
+}
