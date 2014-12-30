@@ -1,0 +1,21 @@
+package DevSoft;
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Scanner;
+
+/**
+ * Created by Федя on 26.12.2014.
+ */
+public class ButtonClear {
+    public void Button() {
+        List<String> list3 = new ArrayList<String>();
+        for (ListIterator<String> i = list3.listIterator(); i.hasNext();){
+            String elList3 = i.next();
+            if(elList3.equals("error")){
+                i.remove();
+            }
+        }
+    }
+}
